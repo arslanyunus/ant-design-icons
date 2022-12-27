@@ -1,5 +1,5 @@
-import * as allIconDefs from '@ant-design/icons-svg';
-import { IconDefinition } from '@ant-design/icons-svg/es/types';
+import * as allIconDefs from '@ant-design/icons-svg/src/index';
+import { IconDefinition } from '@ant-design/icons-svg/templates/types';
 import * as path from 'path';
 import * as fs from 'fs';
 import { promisify } from 'util';
@@ -87,11 +87,11 @@ async function generateEntries() {
 //     value: true
 //   });
 //   exports.default = void 0;
-  
+
 //   var _<%= svgIdentifier %> = _interopRequireDefault(require('./lib/icons/<%= svgIdentifier %>'));
-  
+
 //   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-  
+
 //   var _default = _<%= svgIdentifier %>.default || _<%= svgIdentifier %>;
 //   exports.default = _default;
 //   module.exports = _default;

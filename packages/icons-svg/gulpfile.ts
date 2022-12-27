@@ -35,10 +35,10 @@ export default series(
       toDir: 'src'
     }),
 
-    // 2.2 generate abstract node with the theme "filled"
+    // 2.2 generate abstract node with the theme "bold"
     generateIcons({
-      theme: 'filled',
-      from: ['svg/filled/*.svg'],
+      theme: 'bold',
+      from: ['svg/bold/*.svg'],
       toDir: 'src/asn',
       svgoConfig: generalConfig,
       extraNodeTransformFactories: [
@@ -48,16 +48,16 @@ export default series(
       stringify: JSON.stringify,
       template: iconTemplate,
       mapToInterpolate: ({ name, content }) => ({
-        identifier: getIdentifier({ name, themeSuffix: 'Filled' }),
+        identifier: getIdentifier({ name, themeSuffix: 'Bold' }),
         content
       }),
-      filename: ({ name }) => getIdentifier({ name, themeSuffix: 'Filled' })
+      filename: ({ name }) => getIdentifier({ name, themeSuffix: 'Bold' })
     }),
 
-    // 2.2 generate abstract node with the theme "outlined"
+    // 2.2 generate abstract node with the theme "broken"
     generateIcons({
-      theme: 'outlined',
-      from: ['svg/outlined/*.svg'],
+      theme: 'broken',
+      from: ['svg/broken/*.svg'],
       toDir: 'src/asn',
       svgoConfig: generalConfig,
       extraNodeTransformFactories: [
@@ -67,13 +67,70 @@ export default series(
       stringify: JSON.stringify,
       template: iconTemplate,
       mapToInterpolate: ({ name, content }) => ({
-        identifier: getIdentifier({ name, themeSuffix: 'Outlined' }),
+        identifier: getIdentifier({ name, themeSuffix: 'Broken' }),
         content
       }),
-      filename: ({ name }) => getIdentifier({ name, themeSuffix: 'Outlined' })
+      filename: ({ name }) => getIdentifier({ name, themeSuffix: 'Broken' })
     }),
 
-    // 2.3 generate abstract node with the theme "outlined"
+    // 2.2 generate abstract node with the theme "bulk"
+    generateIcons({
+      theme: 'bulk',
+      from: ['svg/bulk/*.svg'],
+      toDir: 'src/asn',
+      svgoConfig: generalConfig,
+      extraNodeTransformFactories: [
+        assignAttrsAtTag('svg', { focusable: 'false' }),
+        adjustViewBox
+      ],
+      stringify: JSON.stringify,
+      template: iconTemplate,
+      mapToInterpolate: ({ name, content }) => ({
+        identifier: getIdentifier({ name, themeSuffix: 'Bulk' }),
+        content
+      }),
+      filename: ({ name }) => getIdentifier({ name, themeSuffix: 'Bulk' })
+    }),
+
+    // 2.2 generate abstract node with the theme "linear"
+    generateIcons({
+      theme: 'linear',
+      from: ['svg/linear/*.svg'],
+      toDir: 'src/asn',
+      svgoConfig: generalConfig,
+      extraNodeTransformFactories: [
+        assignAttrsAtTag('svg', { focusable: 'false' }),
+        adjustViewBox
+      ],
+      stringify: JSON.stringify,
+      template: iconTemplate,
+      mapToInterpolate: ({ name, content }) => ({
+        identifier: getIdentifier({ name, themeSuffix: 'Linear' }),
+        content
+      }),
+      filename: ({ name }) => getIdentifier({ name, themeSuffix: 'Linear' })
+    }),
+
+    // 2.2 generate abstract node with the theme "outline"
+    generateIcons({
+      theme: 'outline',
+      from: ['svg/outline/*.svg'],
+      toDir: 'src/asn',
+      svgoConfig: generalConfig,
+      extraNodeTransformFactories: [
+        assignAttrsAtTag('svg', { focusable: 'false' }),
+        adjustViewBox
+      ],
+      stringify: JSON.stringify,
+      template: iconTemplate,
+      mapToInterpolate: ({ name, content }) => ({
+        identifier: getIdentifier({ name, themeSuffix: 'Outline' }),
+        content
+      }),
+      filename: ({ name }) => getIdentifier({ name, themeSuffix: 'Outline' })
+    }),
+
+    // 2.3 generate abstract node with the theme "twotone"
     generateIcons({
       theme: 'twotone',
       from: ['svg/twotone/*.svg'],
